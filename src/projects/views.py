@@ -1,22 +1,12 @@
-from django.shortcuts import get_object_or_404, render
-
-# Create your views here.
-from django.http import HttpResponseRedirect
-from django.urls import reverse
-from django.views import generic
-from django.utils import timezone
-
+from django.shortcuts import render
+from rest_framework import viewsets
 from .models import Task, Project
+from .serielizers import TaskSerializer, ProjectSerializer
 
-class IndexView(generic.ListView):
-    context_object_name = 'latest_project_list'
+class ProjectView(viewsets.ModelViewSet):
+    queryset = Project.objects.all()
+    serializer_class = ProjectSerializer
 
-    def get_queryset(self):
-        """Return the las five projects"""
-        return Project.objects.order_by('-created_at')[:5]
-
-class DetailView(generic.DetailView):
-    model = Project
-
-    def get_queryset(self):
-        return Project.objects.filter(created_at__lte=timezone.now())
+class Taskview(viewsets.ModelViewSet):
+    queryset = Task.objects.all()
+    serializer_class = TaskSerializer

@@ -8,8 +8,11 @@ class Project(models.Model):
     due_date        = models.DateField()
     leader          = models.CharField(max_length=160)
     leader_email    = models.EmailField()
-    created_at      = models.DateTimeField(auto_now_add=False)
+    created_at      = models.DateTimeField(auto_now_add=True)
     last_modified   = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.name
 
 class Task(models.Model):
     project_name    = models.ForeignKey(Project, on_delete=models.CASCADE)
@@ -22,6 +25,9 @@ class Task(models.Model):
     last_modified   = models.DateTimeField(auto_now=True)
     completed       = models.DateTimeField()
     notes           = models.TextField()
+
+    def __str__(self):
+        return self.name
 
 
 
