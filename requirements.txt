@@ -1,3 +1,4 @@
 Django==2.1.5
 psycopg2-binary<=2.8
 djangorestframework
+django-cors-headers
