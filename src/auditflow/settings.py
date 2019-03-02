@@ -25,13 +25,14 @@ SECRET_KEY = '43&smnus=$c3hd6&ie^7j(q!er(749^gy9il0sf)bde3fw&91*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.0.9']
 
 CORS_ORIGIN_WHITELIST = (
     'google.com',
     'hostname.example.com',
     'localhost:8000',
-    'localhost:4200'
+    'localhost:4200',
+    '192.168.0.9:4200'
 )
 
 # Application definition
