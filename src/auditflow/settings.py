@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'processes',
     'projects',
     'people',
+    'risks',
 ]
 
 MIDDLEWARE = [
