@@ -4,9 +4,9 @@ from . import views
 from rest_framework import routers
 
 router = routers.DefaultRouter()
-router.register('people', views.PersonView)
+router.register('macroprocesses', views.MacroProcessView)
+router.register('processes', views.ProcessView)
 
 urlpatterns = [
     path('', include(router.urls)),
-
 ]

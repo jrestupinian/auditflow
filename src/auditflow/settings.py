@@ -25,7 +25,7 @@ SECRET_KEY = '43&smnus=$c3hd6&ie^7j(q!er(749^gy9il0sf)bde3fw&91*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.0.9']
+ALLOWED_HOSTS = ['192.168.0.9','localhost','127.0.0.1']
 
 CORS_ORIGIN_WHITELIST = (
     'google.com',
@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
+    'processes',
     'projects',
     'people',
 ]
