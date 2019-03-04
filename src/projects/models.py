@@ -6,7 +6,7 @@ class Project(models.Model):
     description     = models.TextField()
     start_date      = models.DateField()
     due_date        = models.DateField()
-    leader          = models.ForeignKey(Person, on_delete=models.CASCADE)
+    leader          = models.ForeignKey(Person, on_delete=models.PROTECT)
     leader_email    = models.EmailField()
     created_at      = models.DateTimeField(auto_now_add=True)
     last_modified   = models.DateTimeField(auto_now=True)
@@ -15,9 +15,9 @@ class Project(models.Model):
         return self.name
 
 class Task(models.Model):
-    project_name    = models.ForeignKey(Project, on_delete=models.CASCADE)
+    project_name    = models.ForeignKey(Project, on_delete=models.PROTECT)
     name            = models.CharField(max_length=160)
-    assignee        = models.ForeignKey(Person, on_delete=models.CASCADE)
+    assignee        = models.ForeignKey(Person, on_delete=models.PROTECT)
     assignee_email  = models.EmailField()
     start_date      = models.DateField()
     due_date        = models.DateField()

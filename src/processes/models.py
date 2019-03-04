@@ -11,7 +11,7 @@ class MacroProcess(models.Model):
         return self.name
 
 class Process(models.Model):
-    macroprocess_name   = models.ForeignKey(MacroProcess, on_delete=models.CASCADE)
+    macroprocess_name   = models.ForeignKey(MacroProcess, on_delete=models.PROTECT)
     name                = models.CharField(max_length=160)
     objective           = models.TextField()
     reach               = models.TextField()
