@@ -11,17 +11,18 @@ class Project(models.Model):
     APPROVED    = 'APD'
     REJECTED    = 'RJD'
     IDEA        = 'IDA'
+    OVERDUE     = 'OVD'
     PROJECT_STATUS_CHOICES = (
         (IDEA, 'Idea'),
         (REQUESTED, 'Requested'),
         (APPROVED, 'Approved'),
         (REJECTED, 'Rejected'),
         (PLANNING, 'Planning'),        
-        (ON_GOING, 'On Going'),
+        (ON_GOING, 'Ongoing'),
         (DEAD, 'Dead'),
-        (ON_HOLD, 'On hold'),
+        (ON_HOLD, 'On_hold'),
         (COMPLETE, 'Complete'),
-
+        (OVERDUE,   'Overdue'),
     )
     name            = models.CharField(max_length=160)
     description     = models.TextField()
